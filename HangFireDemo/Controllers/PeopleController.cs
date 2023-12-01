@@ -1,5 +1,6 @@
 ﻿using Hangfire;
 using HangFireDemo.Data;
+using HangFireDemo.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HangFireDemo.Controllers
@@ -20,25 +21,12 @@ namespace HangFireDemo.Controllers
         [HttpPost(Name = "create")]
         public ActionResult Create(string personName)
         {
-            _backgroundJobClient.Enqueue(() => CreatePerson(personName));
+            _backgroundJobClient.Enqueue<IPeopleRepository>(repo => repo.CreatePerson(personName));
 
             return Ok();
         }
 
-        [NonAction]
-        public async Task CreatePerson(string personName)
-        {
-            Console.WriteLine($"Adding person {personName}");
-            var person = new Person
-            {
-                Name = personName
-            };
-            _db.Add(person);
 
-            await Task.Delay(5000);
-            await _db.SaveChangesAsync();
-
-            Console.WriteLine($"{personName} added");
-        }
+       
     }
 }

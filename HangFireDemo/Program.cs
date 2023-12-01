@@ -1,6 +1,7 @@
 using Hangfire;
 using Hangfire.SqlServer;
 using HangFireDemo.Data;
+using HangFireDemo.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,8 @@ builder.Services.AddMvc();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IPeopleRepository, PeopleRepository>();
 
 //builder.Services.AddHangfire(x => x.UseSqlServerStorage(@"Data Source=DESKTOP-29HDJAG\SQLEXPRESS;Initial Catalog=hangfire;Integrated Security=True;Pooling=False"));
 //builder.Services.AddHangfireServer();
