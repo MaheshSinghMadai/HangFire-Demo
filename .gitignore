@@ -425,3 +425,14 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,visualstudio,dotnetcore
+/HangFireDemo/bin/Debug/net6.0/HangFireDemo.dll
+/HangFireDemo/bin/Debug/net6.0/HangFireDemo.exe
+/HangFireDemo/bin/Debug/net6.0/HangFireDemo.pdb
+/HangFireDemo/obj/Debug/net6.0/refint/HangFireDemo.dll
+/HangFireDemo/obj/Debug/net6.0/ref/HangFireDemo.dll
+/HangFireDemo/obj/Debug/net6.0/HangFireDemo.pdb
+/HangFireDemo/obj/Debug/net6.0/HangFireDemo.dll
+/HangFireDemo/obj/Debug/net6.0/HangFireDemo.AssemblyInfoInputs.cache
+/HangFireDemo/obj/Debug/net6.0/HangFireDemo.AssemblyInfo.cs
+/HangFireDemo/obj/Debug/net6.0/HangFireDemo.csproj.CoreCompileInputs.cache
+/HangFireDemo/obj/Debug/net6.0/apphost.exe
