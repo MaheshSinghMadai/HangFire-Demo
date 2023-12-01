@@ -20,6 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IPeopleRepository, PeopleRepository>();
+builder.Services.AddTransient<ITimeService, TimeService>();
 
 //builder.Services.AddHangfire(x => x.UseSqlServerStorage(@"Data Source=DESKTOP-29HDJAG\SQLEXPRESS;Initial Catalog=hangfire;Integrated Security=True;Pooling=False"));
 //builder.Services.AddHangfireServer();
@@ -56,6 +57,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseHangfireDashboard();
+
+RecurringJob.AddOrUpdate<ITimeService>("print-time", service => service.PrintNow(), Cron.Daily);
 
 app.MapControllers();
 

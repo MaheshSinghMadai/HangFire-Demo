@@ -26,7 +26,14 @@ namespace HangFireDemo.Controllers
             return Ok();
         }
 
+        [HttpPost("schedule")]
+        public ActionResult Schedule(string personName)
+        {
+            _backgroundJobClient.Schedule(() => Console.Write("The person's name is " + personName), 
+                TimeSpan.FromSeconds(5));
 
-       
+            return Ok();
+        }
+
     }
 }
