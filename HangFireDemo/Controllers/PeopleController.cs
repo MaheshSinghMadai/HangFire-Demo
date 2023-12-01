@@ -17,7 +17,7 @@ namespace HangFireDemo.Controllers
             _backgroundJobClient = backgroundJobClient;
         }
 
-        [HttpPost("create")]
+        [HttpPost(Name = "create")]
         public ActionResult Create(string personName)
         {
             _backgroundJobClient.Enqueue(() => CreatePerson(personName));
@@ -25,6 +25,7 @@ namespace HangFireDemo.Controllers
             return Ok();
         }
 
+        [NonAction]
         public async Task CreatePerson(string personName)
         {
             Console.WriteLine($"Adding person {personName}");

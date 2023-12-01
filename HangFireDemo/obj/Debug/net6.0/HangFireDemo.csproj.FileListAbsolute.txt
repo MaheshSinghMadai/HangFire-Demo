@@ -85,3 +85,4 @@ D:\DotnetProjects\HangFireDemo\HangFireDemo\obj\Debug\net6.0\HangFireDemo.genrun
 D:\DotnetProjects\HangFireDemo\HangFireDemo\obj\Debug\net6.0\ref\HangFireDemo.dll
 D:\DotnetProjects\HangFireDemo\HangFireDemo\bin\Debug\net6.0\Humanizer.dll
 D:\DotnetProjects\HangFireDemo\HangFireDemo\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\DotnetProjects\HangFireDemo\HangFireDemo\obj\Debug\net6.0\HangFireDemo.sourcelink.json
